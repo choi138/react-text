@@ -1,4 +1,4 @@
-# @choi138/react-toast
+# @choi138/react-text
 
 ![alt text](./docs/description.png)
 
@@ -16,7 +16,7 @@ pnpm install @choi138/react-text
 ```tsx
 import React from 'react';
 
-import { Text } from '@choi138/react-toast';
+import { Text } from '@choi138/react-text';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ export default App;
 ```tsx
 import React from 'react';
 
-import { Text, TextContainer } from '@choi138/react-toast';
+import { Text, TextContainer } from '@choi138/react-text';
 
 function App() {
   return (

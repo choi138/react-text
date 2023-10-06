@@ -1,7 +1,7 @@
 {
   "name": "@choi138/react-text",
   "description": "Custom Your Website Text With React-Text",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "GeunWon Choi <kidjustinchoi@gmail.com>",
   "repository": "https://github.com/choi138/react-text.git",
   "private": false,
