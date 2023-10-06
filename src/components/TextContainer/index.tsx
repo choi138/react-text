@@ -5,21 +5,23 @@ import { css } from '@emotion/react';
 
 export interface TextContainerProps {
   children: React.ReactNode;
-  columnGap?: number;
-  rowGap?: number;
-  flexDirection?: string;
-  alignItems?: string;
-  justifyContent?: string;
+  columnGap?: React.CSSProperties['columnGap'];
+  rowGap?: React.CSSProperties['rowGap'];
+  flexDirection?: React.CSSProperties['flexDirection'];
+  alignItems?: React.CSSProperties['alignItems'];
+  justifyContent?: React.CSSProperties['justifyContent'];
+  style?: React.CSSProperties;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export const TextContainer: React.FC<TextContainerProps> = ({
   children,
-  columnGap,
-  rowGap,
-  flexDirection,
-  alignItems,
-  justifyContent,
+  columnGap = 0,
+  rowGap = 0,
+  flexDirection = 'auto',
+  alignItems = 'auto',
+  justifyContent = 'auto',
+  style,
   onClick,
 }) => {
   return (
@@ -27,12 +29,13 @@ export const TextContainer: React.FC<TextContainerProps> = ({
       onClick={onClick}
       css={css`
         display: flex;
-        flex-direction: ${flexDirection ? flexDirection : 'row'};
-        align-items: ${alignItems ? alignItems : 'center'};
-        justify-content: ${justifyContent ? justifyContent : 'center'};
-        column-gap: ${columnGap ? columnGap : 0}rem;
-        row-gap: ${rowGap ? rowGap : 0}rem;
+        flex-direction: ${flexDirection};
+        align-items: ${alignItems};
+        justify-content: ${justifyContent};
+        column-gap: ${columnGap}rem;
+        row-gap: ${rowGap}rem;
       `}
+      style={style}
     >
       {children}
     </div>
