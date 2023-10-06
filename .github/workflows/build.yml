@@ -14,19 +14,28 @@ jobs:
       matrix:
         node-version: [14.x, 16.x, 18.x]
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm build
+
+      - name: Clear pnpm cache
+        run: pnpm cache clear
+
+      - name: Show Node.js and npm versions
+        run: |
+          node --version
+          npm --version
