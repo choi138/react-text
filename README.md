@@ -1,27 +1,84 @@
-# React + TypeScript + Vite
+# @choi138/react-toast
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](./docs/description.png)
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```sh
+yarn add @emotion/react @emotion/styled framer-motion
+yarn add @choi138/react-toast
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Example
+
+### Demo
+
+```tsx
+import React from 'react';
+
+import { Text } from '@choi138/react-toast';
+
+function App() {
+  return (
+    <div>
+      <Text size={1.1} weight={500} color="#4785FA">
+        Easy Text Styling with React Components
+      </Text>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Use Cases
+
+####
+
+```tsx
+import React from 'react';
+
+import { Text, TextContainer } from '@choi138/react-toast';
+
+function App() {
+  return (
+    <TextContainer flexDirection="column" columnGap={0.6}>
+      <Text size={1.1} weight={500} color="#4785FA">
+        Easy Text Styling with React Components
+      </Text>
+      <Text size={1.1} weight={500} color="#279632">
+        Simple and Flexible Layout with TextContainer
+      </Text>
+    </TextContainer>
+  );
+}
+```
+
+## API Reference
+
+### TextOptions
+
+| Required | Key        | Type                                          | Default Value | Description      |
+| :------: | ---------- | --------------------------------------------- | ------------- | ---------------- |
+|    ✅    | children   | React.ReactNode                               | none          | Text content     |
+|    ❌    | size       | number                                        | 1.1           | Text rem size    |
+|    ❌    | weight     | number                                        | 500           | Text weight      |
+|    ❌    | color      | string                                        | #000000       | Text color       |
+|    ❌    | lineHeight | number                                        | auto          | Text line height |
+|    ❌    | cursor     | React.CSSProperties['cursor']                 | auto          | Text cursor      |
+|    ❌    | textAlign  | React.CSSProperties['textAlign']              | left          | Text align       |
+|    ❌    | style      | React.CSSProperties                           | undefined     | Text style       |
+|    ❌    | onClick    | React.MouseEventHandler<HTMLParagraphElement> | undefined     | Text onClick     |
+
+### TextContainerOptions
+
+| Required | Key            | Type                                          | Default Value | Description                    |
+| :------: | -------------- | --------------------------------------------- | ------------- | ------------------------------ |
+|    ✅    | children       | React.ReactNode                               | none          | Text Container content         |
+|    ❌    | columnGap      | React.CSSProperties['columnGap']              | 0             | Text Container column gap      |
+|    ❌    | rowGap         | React.CSSProperties['rowGap']                 | 0             | Text Container row gap         |
+|    ❌    | flexDirection  | React.CSSProperties['flexDirection']          | auto          | Text Container flex direction  |
+|    ❌    | justifyContent | React.CSSProperties['justifyContent']         | auto          | Text Container justify content |
+|    ❌    | alignItems     | React.CSSProperties['alignItems']             | auto          | Text Container align items     |
+|    ❌    | style          | React.CSSProperties                           | undefined     | Text Container style           |
+|    ❌    | onClick        | React.MouseEventHandler<HTMLParagraphElement> | undefined     | Text Container onClick         |

@@ -44,13 +44,13 @@ export const App: React.FC = () => {
           </Text>
         </TextContainer>
 
-        <Text size={1.2} style={{ marginTop: "1.5rem", color: "#777" }}>
+        <Text size={1.2} color="#777" style={{ marginTop: "1.5rem" }}>
           @choi138/react-text provides a set of React components for easy and
           stylish text rendering. With the Text and TextContainer components,
           you can create beautifully styled text and manage layout with ease.
         </Text>
 
-        <Text size={1.2} style={{ marginTop: "1rem", color: "#777" }}>
+        <Text size={1.2} color="#777" style={{ marginTop: "1rem" }}>
           Check out the documentation for more details on customization and
           usage. Don't forget to give it a try and enhance your React projects
           with @choi138/react-text!

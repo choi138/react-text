@@ -20,7 +20,7 @@ export const Text: React.FC<TextProps> = ({
   size = 1.1,
   color = '#000',
   weight = 500,
-  lineHeight = 1.5,
+  lineHeight = 'auto',
   textAlign = 'left',
   cursor = 'auto',
   style,
