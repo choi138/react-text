@@ -5,8 +5,8 @@
 ## Installation
 
 ```sh
-yarn add @emotion/react @emotion/styled framer-motion
-yarn add @choi138/react-toast
+pnpm install @emotion/react @emotion/styled
+pnpm install @choi138/react-text
 ```
 
 ## Example
