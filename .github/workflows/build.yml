@@ -2,40 +2,27 @@ name: CI
 
 on:
   push:
-    branches: ['main']
-  pull_request:
-    branches: ['**']
+    branches:
+      - main
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
-    name: Run tests & Build
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+    - name: Install dependencies
+      run: npm install
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+    - name: Build library
+      run: npm run build
 
-      - name: Build
-        run: pnpm build
-
-      - name: Clear pnpm cache
-        run: pnpm cache clear
-
-      - name: Show Node.js and npm versions
-        run: |
-          node --version
-          npm --version
+    - name: Test
+      run: npm test
