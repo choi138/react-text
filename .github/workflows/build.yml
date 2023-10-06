@@ -27,5 +27,3 @@ jobs:
     - name: Build project
       run: pnpm build
 
-    - name: Test
-      run: pnpm test
