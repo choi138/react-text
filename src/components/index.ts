@@ -1,2 +1,2 @@
 export * from './Text';
-export * from './TextRow';
+export * from './TextContainer';

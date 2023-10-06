@@ -3,18 +3,20 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
-export interface TextRowProps {
+export interface TextContainerProps {
   children: React.ReactNode;
-  gap?: number;
+  columnGap?: number;
+  rowGap?: number;
   flexDirection?: string;
   alignItems?: string;
   justifyContent?: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export const TextRow: React.FC<TextRowProps> = ({
+export const TextContainer: React.FC<TextContainerProps> = ({
   children,
-  gap,
+  columnGap,
+  rowGap,
   flexDirection,
   alignItems,
   justifyContent,
@@ -28,7 +30,8 @@ export const TextRow: React.FC<TextRowProps> = ({
         flex-direction: ${flexDirection ? flexDirection : 'row'};
         align-items: ${alignItems ? alignItems : 'center'};
         justify-content: ${justifyContent ? justifyContent : 'center'};
-        column-gap: ${gap ? gap : 0.5}rem;
+        column-gap: ${columnGap ? columnGap : 0}rem;
+        row-gap: ${rowGap ? rowGap : 0}rem;
       `}
     >
       {children}
