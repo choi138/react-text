@@ -1,28 +1,28 @@
 {
-  "name": "portfolio",
-  "private": true,
+  "name": "@choi138/react-text",
+  "description": "Custom Your Website Text With React-Text",
   "version": "0.0.0",
+  "author": "GeunWon Choi <kidjustinchoi@gmail.com>",
+  "repository": "https://github.com/hanseo0507/react-toast.git",
+  "private": false,
+  "license": "MIT",
   "type": "module",
-  "maintainers": [
-    {
-      "name": "GeunWon Choi",
-      "email": "kidjustinchoi@gmail.com",
-      "url": "https://github.com/choi138"
-    }
-  ],
+  "source": "src/index.ts",
+  "main": "dist/react-text.cjs",
+  "module": "dist/react-text.module.js",
+  "unpkg": "./dist/react-text.umd.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "rimraf dist && microbundle watch --jsx React.createElement --no-compress",
+    "build": "rimraf dist && microbundle --jsx React.createElement --jsxFragment React.Fragment",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix --cache",
     "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write"
   },
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+  "peerDependencies": {
+    "@emotion/react": ">=11",
+    "@emotion/styled": ">=11",
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@types/node": "^20.8.2",
@@ -40,9 +40,10 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "microbundle": "^0.15.1",
     "prettier": "^3.0.3",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.11"
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
   },
   "lint-staged": {
     "**/*.+(ts|tsx|js|jsx|json)": [
