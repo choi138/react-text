@@ -5,8 +5,8 @@
 ## Installation
 
 ```sh
-pnpm install @emotion/react @emotion/styled
-pnpm install @choi138/react-text
+npm install @emotion/react @emotion/styled
+npm install @choi138/react-text
 ```
 
 ## Example
