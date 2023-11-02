@@ -18,12 +18,9 @@ jobs:
       with:
         node-version: 16
 
-    - name: Install npm
+    - name: Install dependencies
       run: npm install
 
-    - name: Install dependencies
-      run: npm install --frozen-lockfile
-
     - name: Build project
-      run: npm build
+      run: npm run build
 
