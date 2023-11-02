@@ -18,12 +18,12 @@ jobs:
       with:
         node-version: 16
 
-    - name: Install pnpm
-      run: npm install -g pnpm
+    - name: Install npm
+      run: npm install
 
     - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      run: npm install --frozen-lockfile
 
     - name: Build project
-      run: pnpm build
+      run: npm build
 
